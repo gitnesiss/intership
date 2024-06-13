@@ -66,5 +66,5 @@
 
 
 
-
-
+Создание аналогового циферблата со стрелкой
+https://doc.qt.io/qt-5/qml-qtquick-extras-circulargauge.html
