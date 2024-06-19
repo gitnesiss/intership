@@ -1,6 +1,6 @@
 from pymavlink import mavutil
 
-# Start a connection listening on a UDP port
+# Запустить прослушивание соединения на UDP порту
 # the_connection = mavutil.mavlink_connection('udpin:localhost:14551')
 the_connection = mavutil.mavlink_connection("COM5", baud=57600)
 

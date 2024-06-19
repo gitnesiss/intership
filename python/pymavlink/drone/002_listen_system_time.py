@@ -1,6 +1,6 @@
 from pymavlink import mavutil
 
-# Start a connection listening on a UDP port
+# Запустить прослушивание соединения на UDP порту
 # the_connection = mavutil.mavlink_connection('udpin:localhost:14551')
 
 # Запустить прослушивание соединения на COM-порту
@@ -14,5 +14,6 @@ print("Heartbeat from system (system %u component %u)" % (the_connection.target_
 # Once connected, use 'the_connection' to get and send messages
 
 while 1:
-    msg = the_connection.recv_match(type='SYSTEM_TIME', blocking=True)
+    msg = the_connection.recv_match(blocking=True)
+    msg = the_connection.recv_match(type='GLOBAL_POSITION_INT', blocking=True)
     print(msg)
