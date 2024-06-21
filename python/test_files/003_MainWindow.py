@@ -20,6 +20,18 @@ class MainWindow(QMainWindow):
         
         # Создаём кнопку с надписью
         button = QPushButton("Press me!")
+
+
+        menu_bar = self.menuBar()
+
+        file_menu = menu_bar.addMenu('&File')
+        edit_menu = menu_bar.addMenu('&Edit')
+        help_menu = menu_bar.addMenu('&Help')
+
+        file_menu.addAction('New', lambda: self.windowIconTextChanged.clear())
+        file_menu.addAction('Open', lambda: print('Open'))
+        file_menu.addAction('Exit', self.destroy)
+
         # Устанавливаем виджет (кнопку) в центр окна
         self.setCentralWidget(button)
 
