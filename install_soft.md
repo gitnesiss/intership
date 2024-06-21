@@ -71,9 +71,6 @@ pyinstaller --onefile hello.py
 pyinstaller --noconsole --onefile hello.py
 ```
 
-
-
-
 ## 1.4 Установка PyQt6
 
 Для установки PyQt6 следует запустить следующую команду

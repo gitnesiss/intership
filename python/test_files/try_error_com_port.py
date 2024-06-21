@@ -2,7 +2,7 @@ import serial
 import serial.tools.list_ports
 
 try:
-    # НАйти и открыть COM-порт
+    # Найти и открыть COM-порт
     ports = serial.tools.list_ports.comports()
     port = next((p.device for p in ports), None)
 
