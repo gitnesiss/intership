@@ -72,6 +72,8 @@ pyinstaller --noconsole --onefile hello.py
 ```
 
 
+
+
 ## 1.4 Установка PyQt6
 
 Для установки PyQt6 следует запустить следующую команду
@@ -128,21 +130,75 @@ pip3 install pyserial
 
 При установке в UNIX системах, нужно добавить каталог содержащий эту библиотеку в переменную $PATH. Почитать [тут](https://ip-calculator.ru/blog/ask/kak-dobavit-katalog-v-path-v-linux/).
 
-# 2 Сборка QtCreator из исходников
+# 2 Сборка QtCreator из исходников на Ubuntu
 
-## 2.1 Установка CMake
+```
+sudo apt-get update -y
+sudo apt-get upgrade -y
+
+python3 --version
+sudo apt-get install python3
+
+sudo apt-get install python3-pip
+pip install -U pip
+
+sudo apt install cmake -y
+
+sudo apt install ninja-build -y
+
+# Устанавливаем Perl
+sudo apt-get install perl -y
+# Устанавливаем модуль для установки модулей через CPAN:
+sudo apt-get install build-essential
+# Обновляем модуль
+sudo perl -MCPAN -e 'install Bundle::CPAN'
+# Интерфейс для работы с базами данных
+sudo apt-get install libdbi-perl
+# Драйвер для работы с базами данных
+sudo apt-get install libdbd-sqlite3-perl -y
+
+sudo apt install clang-15 libclang-15-dev llvm-15 -y
+
+sudo apt install libgl-dev, libegl-dev -y
+
+sudo apt install libfontconfig1-dev libinput-dev libfreetype-dev libx11-dev libx11-xcb-dev libxext-dev libxfixes-dev libxi-dev libxrender-dev libxcb1-dev libxcb-cursor-dev libxcb-glx0-dev libxcb-keysyms1-dev libxcb-image0-dev libxcb-shm0-dev libxcb-icccm4-dev libxcb-sync-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-randr0-dev libxcb-render-util0-dev libxcb-util-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev -y
+
+sudo apt install libatspi2.0-dev -y
+
+git clone git://code.qt.io/qt/qt5.git qt6
+
+cd qt6 
+git switch dev
+
+cd
+
+cd qt6
+perl init-repository
+
+cd
+
+mkdir qt6-build 
+cd qt6-build 
+../qt6/configure -prefix /path/to/install 
+cmake --build . --parallel 4 
+cmake --install.
+```
+
+# 3 Сборка QtCreator из исходников на Windows
+
+## 3.1 Установка CMake
 
 ```
 pacman -S cmake
 ```
 
-## 2.2 Установка python3
+## 3.2 Установка python3
 
 ```
 pacman -S python3
 ```
 
-## 2.3 Сборка QtCreator из исходников
+## 3.3 Сборка QtCreator из исходников
 
 ```
 $ sudo apt install cmake
@@ -161,7 +217,7 @@ $ sudo make install INSTALL_ROOT=[директория, в которую хот
 ----
 
 
-# 3 Установка QT в Windows с помощью MSYS2
+# 4 Установка QT в Windows с помощью MSYS2
 
 Для установки QT Creator на Windows нужно выполнить следующие шаги:
 
