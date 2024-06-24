@@ -8,6 +8,7 @@ from PyQt6.QtWidgets import (
     QApplication,
     QComboBox,
     QVBoxLayout,
+    QHBoxLayout,
     QPushButton
 )
 
@@ -27,15 +28,27 @@ class MainWindow(QMainWindow):
         self.combobox_comport.currentTextChanged.connect(self.find_com_ports)
 
         # Создаём кнопку с надписью
-        button = QPushButton("Подключиться к COM порту")
+        buttonRefresh = QPushButton("Обновить список COM портов")
+        buttonConnect = QPushButton("Подключиться к COM порту")
+
+
+        ### !!!
+        ### !!!
+        ### !!! Работа со слоями https://habr.com/ru/companies/skillfactory/articles/648845/
+        ### !!!
+        ### !!!
+
 
         # Создаём слой с вертикальным расположением
-        layout = QVBoxLayout()
-        layout.addWidget(self.combobox_comport)
-        layout.addWidget(button)
+        layoutV = QVBoxLayout()
+        layoutH = QHBoxLayout()
+        layoutH.addWidget(buttonRefresh)
+        layoutH.addWidget(self.combobox_comport)
+        layoutV.addWidget(layoutH(self))
+        layoutV.addWidget(buttonConnect)
 
         widget = QWidget()
-        widget.setLayout(layout)
+        widget.setLayout(layoutV)
 
         self.setCentralWidget(widget)
 
