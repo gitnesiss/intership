@@ -104,6 +104,8 @@ python3  # Запускаем интерпретатор Python
 
 ```
 pip install pyqt6-tools
+
+pyqt6-tools designer
 ```
 
 ## 1.6 Установка библиотеки pymavlink для работы с протоколом MAVLink 
